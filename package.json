@@ -1,0 +1,14 @@
+{
+  "name": "wenhao",
+  "version": "0.0.1",
+  "description": "wenhao's website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wenhao",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}

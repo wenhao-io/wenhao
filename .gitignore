@@ -1,0 +1,5 @@
+#ignore package installed by npm
+node_modules
+
+#sys
+.idea
