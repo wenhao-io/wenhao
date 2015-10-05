@@ -3,3 +3,7 @@ node_modules
 
 #sys
 .idea
+.DS_Store
+
+#custom
+*.bak
