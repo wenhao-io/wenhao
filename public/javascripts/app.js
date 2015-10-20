@@ -1,3 +1,8 @@
-/**
- * Created by wenhao on 15/10/20.
- */
+var React = require('react');
+var ReactDOM = require('react-dom');
+var Cover = require('./components/cover.react');
+
+ReactDOM.render(
+    <Cover/>,
+    document.getElementById("appWrapper")
+);
