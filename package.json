@@ -3,12 +3,17 @@
   "version": "0.0.1",
   "description": "wenhao's website",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "repository": "https://github.com/wenhao-io/wenhao.git",
   "author": "wenhao",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "flux": "^2.1.1",
+    "react": "^0.13.3",
+    "react-router": "^0.13.4"
+  },
+  "devDependencies": {
+    "bower": "^1.6.3",
+    "browserify": "^11.2.0"
   }
 }
