@@ -7,3 +7,4 @@ node_modules
 
 #custom
 *.bak
+bundle.js

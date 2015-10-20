@@ -10,9 +10,11 @@
     "express": "^4.13.3",
     "flux": "^2.1.1",
     "react": "^0.13.3",
+    "react-dom": "^0.14.0",
     "react-router": "^0.13.4"
   },
   "devDependencies": {
+    "babelify": "^6.3.0",
     "bower": "^1.6.3",
     "browserify": "^11.2.0"
   }
