@@ -2,6 +2,9 @@ var React = require('react');
 var Footer = require('./footer.react');
 
 var Cover = React.createClass({
+    handleClick: function () {
+        window.location.href = "category";
+    },
     render: function () {
         return <div className="site-wrapper">
             <div className="site-wrapper-inner">
@@ -15,7 +18,7 @@ var Cover = React.createClass({
                         <p className="lead">热爱新鲜事物,热爱前端技术.</p>
 
                         <p className="lead">
-                            <button className="btn btn-lg btn-wenhao">Let me in !</button>
+                            <button className="btn btn-lg btn-wenhao" onClick={this.handleClick}>Get In !</button>
                         </p>
                     </div>
                     <Footer/>

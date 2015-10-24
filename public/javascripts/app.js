@@ -4,5 +4,5 @@ var Cover = require('./components/cover.react');
 
 ReactDOM.render(
     <Cover/>,
-    document.getElementById("appWrapper")
+    document.getElementById("app")
 );
