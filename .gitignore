@@ -7,5 +7,6 @@ node_modules
 
 #custom
 *.bak
+*.bak.html
 *.bundle.js
 temp.*
