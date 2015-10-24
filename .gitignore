@@ -7,5 +7,5 @@ node_modules
 
 #custom
 *.bak
-bundle.js
+*.bundle.js
 temp.*

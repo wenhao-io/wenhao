@@ -2,3 +2,17 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
+#footerContent {
+    text-align: center;
+}
+
+#signature {
+    background-image: url(../images/front_end.png);
+    background-size: cover;
+}
+
+#signature img {
+    height: 200px;
+    float: right;
+}
