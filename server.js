@@ -1,4 +1,5 @@
 var express = require('express');
+var mysql = require('mysql');
 
 var app = express();
 
@@ -25,6 +26,27 @@ app.get('/category', function (request, response) {
     response.sendFile('category.html', options, function () {
         console.log('visited category');
     });
+});
+
+app.get('/category/list',function(request, response){
+    var connection = mysql.createConnection({
+        host     : '127.0.0.1',
+        user     : 'root',
+        password : 'wenhao',
+        database : 'wenhao'
+    });
+
+    connection.connect();
+
+    connection.query('select * from t_blog_list', function(err, rows, fields) {
+        if (err) throw err;
+
+        response.type('application/json');
+        response.status(200);
+        response.send(rows);
+    });
+
+    connection.end();
 });
 
 app.get('/article', function (request, response) {
