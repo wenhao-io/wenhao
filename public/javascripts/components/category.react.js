@@ -6,7 +6,6 @@ var FooterSmall = require('./footerSmall.react.js');
 var CategoryStore = require('../stores/CategoryStore');
 var CategoryActions = require('../actions/CategoryAction');
 
-
 function getCategoryState() {
     return {
         categories: CategoryStore.getAll()
@@ -16,18 +15,37 @@ function getCategoryState() {
 var Category = React.createClass(
     {
         getInitialState: function () {
-            return getCategoryState();
+            return {categories:[]};
         },
-        componentWillMount:function(){
+        //componentWillMount:function(){
+        //    //CategoryActions.getCategoryList('all');
+        //},
+        //componentDidMount: function () {
+        //    CategoryActions.getCategoryList('all');
+        //    TodoStore.addChangeListener(this._onChange);
+        //    this.setState(getCategoryState());
+        //},
+        componentDidMount: function () {
+            CategoryStore.addChangeListener(this._onChange);
             CategoryActions.getCategoryList('all');
         },
+
+        componentWillUnmount: function () {
+            CategoryStore.removeChangeListener(this._onChange);
+        },
         render: function () {
+            var cate = this.state.categories;
+            console.log(cate);
             return <div id="category">
                 <Navigation/>
                 <Signature/>
                 <CategoryContent categories={this.state.categories}/>
                 <FooterSmall/>
             </div>;
+        },
+
+        _onChange:function(){
+            this.setState(getCategoryState());
         }
     });
 
