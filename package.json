@@ -9,9 +9,11 @@
   "dependencies": {
     "express": "^4.13.3",
     "flux": "^2.1.1",
+    "keymirror": "^0.1.1",
     "mysql": "^2.9.0",
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "object-assign": "^4.0.1",
+    "react": "^0.14.1",
+    "react-dom": "^0.14.1"
   },
   "devDependencies": {
     "babelify": "^6.4.0",
