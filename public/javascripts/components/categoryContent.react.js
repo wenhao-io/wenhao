@@ -12,23 +12,15 @@ var CategoryContent = React.createClass(
                     var category = categories[i];
                     BlogThumbs.push(<BlogThumb title={category['title']}
                                                description={category['description']}
-                                               img_src={category['img_src']}/>);
+                                               img_src={category['img_src']}
+                                               article={category['article']}
+                        />);
                 }
             }
 
             return <div id="category" className="container">
                 <div className="row">
-                    {
-                        //<BlogThumb/>
-                        //<BlogThumb/>
-                        //<BlogThumb/>
-                        //<BlogThumb/>
-                        //<BlogThumb/>
-                        //<BlogThumb/>
-                        //<BlogThumb/>
-                        //<BlogThumb/>
-                        BlogThumbs
-                    }
+                    {BlogThumbs}
                 </div>
             </div>;
         }

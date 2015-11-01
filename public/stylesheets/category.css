@@ -3,10 +3,12 @@ body {
     padding-bottom: 50px;
 }
 
+/*页脚声明文件*/
 #footerContent {
     text-align: center;
 }
 
+/*页头部分*/
 #signature {
     background-image: url(../images/front_end.png);
     background-size: cover;
@@ -15,4 +17,8 @@ body {
 #signature img {
     height: 200px;
     float: right;
+}
+
+.thumbnail img, h3 {
+    cursor: pointer;
 }
