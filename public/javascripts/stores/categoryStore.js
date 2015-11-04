@@ -55,11 +55,21 @@ var CategoryStore = assign({}, EventEmitter.prototype, {
 AppDispatcher.register(function (action) {
     switch (action.actionType) {
         case CategoryConstants.CATEGORY_SHOW_LIST:
-            getCategoryList("all");
+            $.ajax({
+                url: 'category/list',
+                type: 'GET',
+                dataType: 'json',
+                data: {type: 'all'},
+                success: function (data) {
+                    categories = data;
+                    CategoryStore.emitChange();
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+            });
             break;
-
         default:
-
     }
 });
 

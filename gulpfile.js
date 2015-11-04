@@ -20,7 +20,15 @@ gulp.task('debug-category', function () {
         .pipe(gulp.dest('public/javascripts'));
 });
 
-gulp.task('debug', ['debug-cover','debug-category']);
+gulp.task('debug-blog', function () {
+    return browserify({entries: 'public/javascripts/blog.js', debug: true})
+        .transform(babelify)
+        .bundle()
+        .pipe(source('blog.bundle.js'))
+        .pipe(gulp.dest('public/javascripts'));
+});
+
+gulp.task('debug', ['debug-cover','debug-category', 'debug-blog']);
 
 //gulp.task('browserSync', function(){
 //

@@ -49,11 +49,12 @@ app.get('/category/list',function(request, response){
     connection.end();
 });
 
-app.get('/article', function (request, response) {
-    response.sendFile('article.html', options, function () {
-        console.log('visited index');
+app.get('/blog', function (request, response) {
+    response.sendFile('blog.html', options, function () {
+        console.log('visited blog');
     });
 });
+
 
 app.use(function (err, request, response, next) {
     console.error(err.stack);

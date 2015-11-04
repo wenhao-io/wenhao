@@ -1,8 +1,8 @@
 var React = require('react');
 var Navigation = require('./navigation.react');
-var Signature = require('./signature.react');
+var Signature = require('./category.signature.react.js');
 var CategoryContent = require('./categoryContent.react');
-var FooterSmall = require('./footerSmall.react.js');
+var FooterSmall = require('./footerSmall.react');
 var CategoryStore = require('../stores/CategoryStore');
 var CategoryActions = require('../actions/CategoryAction');
 

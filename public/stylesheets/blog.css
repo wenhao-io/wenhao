@@ -1,0 +1,25 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 16px;
+}
+
+/*页脚声明文件*/
+#footerContent {
+    text-align: center;
+}
+
+/*页头部分*/
+#signature {
+    background-color: #004444;
+    background-size: cover;
+}
+
+#signature img {
+    height: 200px;
+    float: right;
+}
+
+#signature h1{
+    color:ghostwhite;
+}

@@ -3,7 +3,10 @@ var React = require('react');
 var BlogThumb = React.createClass(
     {
         redirect2Article: function () {
-            window.location.href = "article/" + this.props['article'];
+            window.location.href = "blog#" + this.props['article'];
+        },
+        getBlogAddress: function () {
+            return "blog#" + this.props['article'];
         },
         render: function () {
             var props = this.props;
@@ -13,7 +16,7 @@ var BlogThumb = React.createClass(
                     <img src={"images/" + props['img_src']} alt="" onClick={this.redirect2Article}/>
 
                     <div className="caption">
-                        <h3 onClick={this.redirect2Article}>{props['title']}</h3>
+                        <a href={this.getBlogAddress()}><h3>{props['title']}</h3></a>
 
                         <p>{props['description']}</p>
                     </div>
