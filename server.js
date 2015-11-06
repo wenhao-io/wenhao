@@ -28,17 +28,17 @@ app.get('/category', function (request, response) {
     });
 });
 
-app.get('/category/list',function(request, response){
+app.get('/category/list', function (request, response) {
     var connection = mysql.createConnection({
-        host     : '127.0.0.1',
-        user     : 'root',
-        password : 'wenhao',
-        database : 'wenhao'
+        host: '127.0.0.1',
+        user: 'root',
+        password: 'wenhao',
+        database: 'wenhao'
     });
 
     connection.connect();
 
-    connection.query('select * from t_blog_list', function(err, rows, fields) {
+    connection.query('select * from t_blog_list', function (err, rows, fields) {
         if (err) throw err;
 
         response.type('application/json');
@@ -55,6 +55,28 @@ app.get('/blog', function (request, response) {
     });
 });
 
+app.get('/api/getBlog', function (request, response) {
+    var title = request.query.title;
+
+    var connection = mysql.createConnection({
+        host: '127.0.0.1',
+        user: 'root',
+        password: 'wenhao',
+        database: 'wenhao'
+    });
+
+    connection.connect();
+
+    connection.query("select content from blog where title='" + title + "'", function (err, rows, fields) {
+        if (err) throw err;
+
+        response.type('application/json');
+        response.status(200);
+        response.send(rows[0]['content']);
+    });
+
+    connection.end();
+});
 
 app.use(function (err, request, response, next) {
     console.error(err.stack);

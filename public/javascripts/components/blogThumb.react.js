@@ -3,10 +3,10 @@ var React = require('react');
 var BlogThumb = React.createClass(
     {
         redirect2Article: function () {
-            window.location.href = "blog#" + this.props['article'];
+            window.location.href = "blog#" + this.props['blog'];
         },
         getBlogAddress: function () {
-            return "blog#" + this.props['article'];
+            return "blog#" + this.props['blog'];
         },
         render: function () {
             var props = this.props;

@@ -7,7 +7,7 @@ var Signature = React.createClass(
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-9">
-                            <h1>node.js多线程的讨论</h1>
+                            <h1>{this.props.title}</h1>
                         </div>
                         <div className="col-lg-3">
                             <img src="images/gundam_circle.png"/>

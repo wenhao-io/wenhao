@@ -13,7 +13,7 @@ var CategoryContent = React.createClass(
                     BlogThumbs.push(<BlogThumb title={category['title']}
                                                description={category['description']}
                                                img_src={category['img_src']}
-                                               article={category['article']}
+                                               blog={category['blog']}
                         />);
                 }
             }

@@ -4,7 +4,7 @@ var Signature = require('./category.signature.react.js');
 var CategoryContent = require('./categoryContent.react');
 var FooterSmall = require('./footerSmall.react');
 var CategoryStore = require('../stores/CategoryStore');
-var CategoryActions = require('../actions/CategoryAction');
+var CategoryAction = require('../actions/CategoryAction');
 
 function getCategoryState() {
     return {
@@ -19,7 +19,7 @@ var Category = React.createClass(
         },
         componentDidMount: function () {
             CategoryStore.addChangeListener(this._onChange);
-            CategoryActions.getCategoryList('all');
+            CategoryAction.getCategoryList('all');
         },
         componentWillUnmount: function () {
             CategoryStore.removeChangeListener(this._onChange);

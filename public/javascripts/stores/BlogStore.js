@@ -1,19 +1,19 @@
-var AppDispatcher = require('../dispatcher/CategoryDispatcher');
+var AppDispatcher = require('../dispatcher/BlogDispatcher');
 var EventEmitter = require('events').EventEmitter;
-var CategoryConstants = require('../constants/CategoryConstants');
+var BlogConstants = require('../constants/BlogConstants');
 var assign = require('object-assign');
 
 var CHANGE_EVENT = 'change';
 
-var categories = [];
+var blog = {};
 
-var CategoryStore = assign({}, EventEmitter.prototype, {
+var BlogStore = assign({}, EventEmitter.prototype, {
     /**
      * Get the entire collection of TODOs.
      * @return {object}
      */
     getAll: function () {
-        return categories;
+        return blog;
     },
 
     emitChange: function () {
@@ -38,15 +38,16 @@ var CategoryStore = assign({}, EventEmitter.prototype, {
 // Register callback to handle all updates
 AppDispatcher.register(function (action) {
     switch (action.actionType) {
-        case CategoryConstants.CATEGORY_SHOW_LIST:
+        case BlogConstants.BLOG_CONTENT:
+            var title = action.text.trim().replace(/#/,'');
             $.ajax({
-                url: 'category/list',
+                url: '/api/getBlog',
                 type: 'GET',
                 dataType: 'json',
-                data: {type: 'all'},
+                data: {title: title},
                 success: function (data) {
-                    categories = data;
-                    CategoryStore.emitChange();
+                    blog = data;
+                    BlogStore.emitChange();
                 },
                 error: function (e) {
                     console.log(e);
@@ -57,4 +58,4 @@ AppDispatcher.register(function (action) {
     }
 });
 
-module.exports = CategoryStore;
+module.exports = BlogStore;
