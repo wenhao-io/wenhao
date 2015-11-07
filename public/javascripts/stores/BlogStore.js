@@ -8,37 +8,23 @@ var CHANGE_EVENT = 'change';
 var blog = {};
 
 var BlogStore = assign({}, EventEmitter.prototype, {
-    /**
-     * Get the entire collection of TODOs.
-     * @return {object}
-     */
-    getAll: function () {
+    getBlog: function () {
         return blog;
     },
-
     emitChange: function () {
         this.emit(CHANGE_EVENT);
     },
-
-    /**
-     * @param {function} callback
-     */
     addChangeListener: function (callback) {
         this.on(CHANGE_EVENT, callback);
     },
-
-    /**
-     * @param {function} callback
-     */
     removeChangeListener: function (callback) {
         this.removeListener(CHANGE_EVENT, callback);
     }
 });
 
-// Register callback to handle all updates
 AppDispatcher.register(function (action) {
     switch (action.actionType) {
-        case BlogConstants.BLOG_CONTENT:
+        case BlogConstants.GET_BLOG_CONTENT:
             var title = action.text.trim().replace(/#/,'');
             $.ajax({
                 url: '/api/getBlog',

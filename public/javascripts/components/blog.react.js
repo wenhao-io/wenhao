@@ -9,7 +9,7 @@ var BlogAction = require('../actions/BlogAction');
 
 function getBlogState() {
     return {
-        blog: BlogStore.getAll()
+        blog: BlogStore.getBlog()
     };
 }
 
@@ -19,8 +19,18 @@ var Blog = React.createClass({
     },
     componentDidMount: function () {
         BlogStore.addChangeListener(this._onChange);
+        this.bindHashEvent();
+
         var hash = window.location.hash;
-        BlogAction.getBlog(hash);
+        if(hash)
+            BlogAction.getBlog(hash);
+    },
+    bindHashEvent:function(){
+        window.onhashchange = function(e){
+            var hash = window.location.hash;
+            if(hash)
+                BlogAction.getBlog(hash);
+        };
     },
     componentWillUnmount: function () {
         BlogStore.removeChangeListener(this._onChange);
