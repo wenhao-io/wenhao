@@ -15,7 +15,7 @@ function getBlogState() {
 
 var Blog = React.createClass({
     getInitialState: function () {
-        return {blog:{}};
+        return {blog:''};
     },
     componentDidMount: function () {
         BlogStore.addChangeListener(this._onChange);

@@ -5,7 +5,7 @@ var assign = require('object-assign');
 
 var CHANGE_EVENT = 'change';
 
-var blog = {};
+var blog = '';
 
 var BlogStore = assign({}, EventEmitter.prototype, {
     getBlog: function () {

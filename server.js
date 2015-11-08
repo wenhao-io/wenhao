@@ -67,12 +67,12 @@ app.get('/api/getBlog', function (request, response) {
 
     connection.connect();
 
-    connection.query("select content from blog where title='" + title + "'", function (err, rows, fields) {
+    connection.query("select * from blog where title='" + title + "'", function (err, rows, fields) {
         if (err) throw err;
 
         response.type('application/json');
         response.status(200);
-        response.send(rows[0]['content']);
+        response.send(rows[0]);
     });
 
     connection.end();
