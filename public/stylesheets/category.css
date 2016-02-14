@@ -9,6 +9,10 @@ body {
 }
 
 /*页头部分*/
+.navbar-form .form-group, button{
+    margin-right: 5px;
+}
+
 #signature {
     background-image: url(../images/front_end.png);
     background-size: cover;
